@@ -19,7 +19,7 @@ f:
 
     mov edx, dword[ebp + 8]
     mov cl, byte[edx]
-    sar eax, cl
+    shr eax, cl ; using unsigned values
     movzx ecx, word[edx + 8] ; !using unsigned values in structure
     add eax, ecx
 
