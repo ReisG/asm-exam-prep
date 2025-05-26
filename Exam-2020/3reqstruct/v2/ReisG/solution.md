@@ -1,8 +1,7 @@
-Размещение полей
-
+Смещения полей
 ```
-c(+0) s(+2) next(+4)
-↓     ↓     ↓
-cc @@ ss ss nn nn nn nn
-struct alignment = 4
+с(+0)       next(+4)    s(+8)        
+↓           ↓           ↓
+сс @@ @@ @@ nn nn nn nn ss ss @@ @@
+struct alignment = 8
 ```

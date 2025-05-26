@@ -1,6 +1,6 @@
 section .text
-global main:
-main:
+global f
+f:
     push ebp
     mov ebp, esp
     lea esp, [esp - 0x8]
@@ -14,17 +14,14 @@ main:
     .skip:
 
     mov eax, dword[eax + 4]
-    and eax, 1
     mov dword[esp], eax
     call f
 
-    ; doing assignment without branching
-    mov ecx, dword[ebp + 8]
-    test eax, eax
-    movsx edx, dword[ecx + 2]
-    cmovnz eax, edx
-    movsx edx, dword[ecx]
-    cmovz eax, edx
+    mov edx, dword[ebp + 8]
+    mov cl, byte[edx]
+    sar eax, cl
+    movsx ecx, word[edx + 8]
+    add eax, ecx
 
     leave
     ret
