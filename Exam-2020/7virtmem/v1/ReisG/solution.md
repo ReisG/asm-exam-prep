@@ -17,7 +17,7 @@ address to obtain: `0xb0`
 ## Accessing TLB
 `0xb0 = 10110000`
 
-First try to get data from TLB. It allows as to get cached data directly using *virtual address*
+First try to get PPN from TLB.
 
 offest inside page consumes 5 bits. 1 bit to distinguish sets. Rest is for tag
 
