@@ -14,9 +14,9 @@ main:
     .skip:
 
     mov eax, dword[eax + 4]
-    and eax, 1
     mov dword[esp], eax
     call f
+    and eax, 1
 
     ; doing assignment without branching
     mov ecx, dword[ebp + 8]
