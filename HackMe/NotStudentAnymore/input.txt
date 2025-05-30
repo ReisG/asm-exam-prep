@@ -1,0 +1,4 @@
+#!/bin/sh
+cp $1 input.txt
+env -i PWD=`pwd` gdb -iex "unset env LINES" -iex "unset env COLUMNS" --args $(readlink -f main) input.txt
+rm input.txt
