@@ -1,0 +1,1 @@
+env -i PWD=`pwd` $(readlink -f main) < payload.txt
