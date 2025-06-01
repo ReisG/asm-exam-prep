@@ -33,8 +33,9 @@ callall:
         je .L1E
 
         mov ecx, dword[ebx]; number of args
-        shl ecx, 2; making arguments with size 4
-        sub esp, ecx
+        neg ecx
+        lea esp, [esp + ecx*4]; making arguments with size 4
+        neg ecx
         and esp, -16
         add ebx, 4
 
