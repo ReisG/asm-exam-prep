@@ -64,7 +64,7 @@ callall:
 
         ; moving ebx further
         mov eax, dword[ebx - 8]
-        shr eax, 2
+        shl  eax, 2
         add ebx, eax
 
         inc esi
