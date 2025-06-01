@@ -20,11 +20,12 @@ int main(void)
         char v = 7;
         while (v && !(t >> v & 1)) v--;
 
-        char frac = (t >> v - 3) & 0x7;
+        // char frac = (t >> v - 3) & 0x7;
+        if (i == 0) printf("\n\n%x\n\n", v + 0xfff & 0xfff);
         if (v > 3 && t & (1 << v - 3) - 1) continue;
         // !!!!!!!!!!!!
         if (i & 1 && v == 0
-        || !(i & 1) && v == 1)
+        || !(i & 1) && ((v + 0xfff & 0xfff) == 0 || t == 0))
         {
             res++;
             printf("%b %d\n", t, v);
