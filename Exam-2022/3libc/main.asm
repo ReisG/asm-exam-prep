@@ -38,9 +38,8 @@ callall:
         sub esp, 0xc
         add ebx, 4
 
-        ; moving calling address in red zone
+        ; moving calling address to edx
         mov edx, dword[ebx]
-        mov dword[esp - 4], edx
         add ebx, 4
 
         ; pushing args on stack from end
@@ -54,7 +53,7 @@ callall:
             dec ecx
             jmp .L11
         .L11E:
-        call dword[esp - 4]
+        call edx
 
         ; store result
         mov dword[edi + esi*4], eax
