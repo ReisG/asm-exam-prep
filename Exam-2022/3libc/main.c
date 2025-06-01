@@ -9,7 +9,7 @@ int main(void)
     int b = 2;
 
     char *tt[] = {"%d %d", "%d"};
-    void* tr[] = {(void*)2, (void*)3, &scanf, tt, &a, &b, &printf, tt + 4, (void*)(a + b)};
+    void* tr[] = {(void*)2, (void*)3, &scanf, tt[0], &a, &b, &printf, tt[1], (void*)(a + b)};
     int *res = callall(tr);
     for (int i = 0; i < (int)tr[0]; i++)
     {
