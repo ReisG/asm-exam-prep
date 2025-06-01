@@ -35,7 +35,6 @@ callall:
         mov ecx, dword[ebx]; number of args
         sub esp, ecx
         and esp, -16
-        sub esp, 0xc
         add ebx, 4
 
         ; moving calling address to edx
